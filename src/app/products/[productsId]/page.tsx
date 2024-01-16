@@ -21,6 +21,13 @@ export const generateMetadata = async ({
 };
 
 export default function ProductsDetails({ params }: Props) {
+  const getRandomNumber = (count: number) => {
+    return Math.floor(Math.random() * count);
+  };
+  const random = getRandomNumber(2);
+  if (random === 1) {
+    throw new Error("Product Id is Not valid");
+  }
   return (
     <>
       <h1>Products details of --- {params.productsId}</h1>
